@@ -1,0 +1,173 @@
+/* src/App.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title { text-align: center; margin-bottom: 2rem; color: #111827; }
+
+/* --- ŰRLAP STÍLUSOK --- */
+.product-form {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  margin-bottom: 2rem;
+}
+
+.product-form h2 { margin-top: 0; margin-bottom: 1rem; font-size: 1.25rem; }
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+input, select {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.error-message { background: #fee2e2; color: #b91c1c; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; }
+
+/* --- GOMBOK --- */
+button {
+  cursor: pointer;
+  border: none;
+  background: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: 500;
+}
+button:hover { background: #d1d5db; }
+
+.submit-btn { background: #2563eb; color: white; width: 100%; padding: 0.75rem; margin-top: 1rem; font-size: 1rem; }
+.submit-btn:hover { background: #1d4ed8; }
+
+.icon-btn { padding: 0.4rem; border-radius: 6px; font-size: 1.2rem; background: transparent; }
+.delete-btn { background: #fee2e2; color: #ef4444; }
+.delete-btn:hover { background: #fecaca; }
+
+.stock-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; padding: 0; }
+
+/* --- KÁRTYA GRID ÉS ELRENDEZÉS --- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.card-header h3 { margin: 0; font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
+.year { color: #6b7280; font-size: 0.9rem; font-weight: normal; }
+.price { font-size: 1.5rem; font-weight: bold; color: #2563eb; margin: 0; }
+
+/* ELRENDEZÉS JAVÍTÁSA */
+.flex-row { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; /* Ez húzza egy vonalba a kapcsolót és a szöveget! */
+}
+.align-center { align-items: center; }
+.flex-gap { display: flex; gap: 0.5rem; align-items: center; }
+.section-title { font-weight: 600; margin: 0 0 0.5rem 0; font-size: 0.9rem; color: #4b5563; }
+.section-margin { margin-top: 0.5rem; }
+
+.published-text { color: #22c55e; font-weight: 600; }
+.hidden-text { color: #ef4444; font-weight: 600; }
+
+/* --- RADIX UI STÍLUSOK --- */
+
+/* Switch */
+/* Switch */
+.SwitchRoot {
+  all: unset; /* EZ A LÉNYEG: letiltja az ugly alapértelmezett fekete keretet */
+  width: 44px; 
+  height: 24px;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Ez tartja függőlegesen középen a pöttyöt */
+  padding: 0 2px; /* Kicsi belső margó, hogy ne lógjon le a széléről */
+  box-sizing: border-box; /* A padding miatt a méret ne nőjön meg */
+}
+
+.SwitchRoot[data-state='checked'] { 
+  background-color: #22c55e; 
+}
+
+.SwitchThumb {
+  display: block; 
+  width: 20px; 
+  height: 20px; 
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 150ms ease-out;
+  transform: translateX(0); /* Bal oldali alapállapot */
+}
+
+/* Ha be van kapcsolva, átcsúszik a jobb oldalra */
+.SwitchRoot[data-state='checked'] .SwitchThumb { 
+  transform: translateX(20px); /* 44px (szélesség) - 4px (padding) - 20px (golyó) = 20px */
+}
+
+/* RadioGroup (Színek) */
+.RadioGroupRoot { display: flex; flex-wrap: wrap; gap: 12px; }
+.radio-item-wrapper { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.RadioGroupItem {
+  background-color: white; width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid #d1d5db; padding: 0; display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.RadioGroupIndicator { width: 12px; height: 12px; border-radius: 50%; }
+.radio-label { font-size: 0.9rem; cursor: pointer; }
+
+
+/* --- CSILLAGOS ÉRTÉKELÉS --- */
+.stars-container {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 1.75rem; 
+  color: #e5e7eb; /* Halvány szürke alapértelmezetten (üres) */
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.1s;
+  user-select: none;
+}
+
+/* Amikor a csillag aktív (eléri a rating értékét) */
+.star.active {
+  color: #eab308; /* Erőteljes sárga/arany szín */
+}
+
+/* Kis effekt, amikor fölé viszed az egeret */
+.star:hover {
+  transform: scale(1.15);
+}
