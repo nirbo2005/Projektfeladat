@@ -1,0 +1,76 @@
+# ==========================================
+# Általános Node.js és környezeti változók
+# (Ezek a frontend és backend mappákra is érvényesek)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Környezeti változók (Kivétel: .env.example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# ==========================================
+# Backend (NestJS + Prisma)
+# ==========================================
+backend/dist/
+backend/out/
+backend/.nestjs/
+
+# Prisma specifikus (ha SQLite-ot használsz, a lokális adatbázist ne kommitold)
+backend/prisma/*.db
+backend/prisma/*.db-journal
+
+# Backend tesztelés és lefedettség
+backend/coverage/
+backend/.nyc_output/
+
+# ==========================================
+# Frontend (React + TypeScript)
+# ==========================================
+# Build fájlok (Vite vagy Create React App)
+frontend/dist/
+frontend/dist-ssr/
+frontend/build/
+
+# Cache és log fájlok
+frontend/.eslintcache
+frontend/.tsbuildinfo
+frontend/npm-debug.log*
+
+# Frontend tesztelés
+frontend/coverage/
+
+# ==========================================
+# Operációs rendszer és IDE fájlok
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Szerkesztők (VS Code, IntelliJ, stb.)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

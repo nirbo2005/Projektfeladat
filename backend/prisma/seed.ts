@@ -1,5 +1,7 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-misused-promises */ 
 import { PrismaClient } from '@prisma/client';
 import { fakerHU as faker } from '@faker-js/faker'; // Magyar lokalizáció használata
 
